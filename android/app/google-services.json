@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "666299193868",
+    "project_id": "trainingrn-firebase-197ea",
+    "storage_bucket": "trainingrn-firebase-197ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666299193868:android:6fec60a054b103f9ea2c29",
+        "android_client_info": {
+          "package_name": "com.trainingrn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666299193868-8auv9269c7p25jqdu414r4n89dvp9vdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4oxj5XDzknMaHdLw4g8QFiNB7X9x0BeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666299193868-8auv9269c7p25jqdu414r4n89dvp9vdc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
