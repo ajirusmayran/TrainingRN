@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import {
     NativeBaseProvider,
     Box,
@@ -13,8 +13,11 @@ import {
     View,
 } from 'native-base';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { RootContext } from '../../App';
 
 export default function MyAccount({ navigation }) {
+    const context = useContext(RootContext);
+
     return (
         <NativeBaseProvider>
             <StatusBar backgroundColor="#d00000" barStyle="light-content" />
@@ -46,6 +49,8 @@ export default function MyAccount({ navigation }) {
                 <HStack justifyContent="space-between">
                     <Box justifyContent="space-between">
                         <VStack space="2">
+                            <Text color="white" fontSize="lg"> Hello !!! {context.name} </Text>
+                            <Text color="white" fontSize="lg"> {context.mail} </Text>
                             <Text fontSize="sm" color="white">
                                 Today @ 9PM
                             </Text>

@@ -23,7 +23,7 @@ export default function AppBar() {
 
             <HStack bg='#ae2012' px="1" py="3" justifyContent='space-between' alignItems='center'>
                 <HStack space="4" alignItems='center'>
-                    <Text color="white" fontSize="20" fontWeight='bold' style={{ paddingLeft: 10 }} >Home</Text>
+                    <Text color="white" fontSize="20" fontWeight='bold' style={{ paddingLeft: 10 }} > Home </Text>
                 </HStack>
                 <HStack space="2">
                     <IconButton icon={<Icon as={<MaterialIcons name='camera-alt' />} size='sm' color="white" />} onPress={() => navigation.navigate('CameraScreenView')} />

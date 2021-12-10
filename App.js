@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, createContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Details from './src/screens/Details';
@@ -16,24 +16,41 @@ import DetailsDataInbox from './src/screens/DetailsDataInbox';
 // Import Component
 import BottomTab from './src/components/BottomTab';
 
-const Stack = createNativeStackNavigator();
+export const RootContext = createContext();
 
 function App() {
+  
+  const Provider = RootContext.Provider;
+
+  const [name, setName] = useState();
+  const [mail, setMail] = useState();
+
+  const Stack = createNativeStackNavigator();
+
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="BottomTab">
-        <Stack.Screen name="BottomTab" component={BottomTab} options={{ headerShown: false }} />
-        <Stack.Screen name="Details" component={Details} options={{ headerShown: false }} />
-        <Stack.Screen name="MyAccount" component={MyAccount} options={{ headerShown: false }} />
-        <Stack.Screen name="History" component={History} options={{ headerShown: false }} />
-        <Stack.Screen name="NativeBaseScreen" component={NativeBaseScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="MapScreen" component={MapScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="CameraScreenView" component={CameraScreenView} options={{ headerShown: false }} />
-        <Stack.Screen name="FirebaseMessaging" component={FirebaseMessaging} options={{ headerShown: false }} />
-        <Stack.Screen name="AsyncStorageScreen" component={AsyncStorageScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="InboxScreen" component={InboxScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="DetailsDataInbox" component={DetailsDataInbox} options={{ headerShown: false }} />
-      </Stack.Navigator>
+      <Provider
+        value={{
+          name, setName,
+          mail, setMail,
+        }}
+      >
+
+        <Stack.Navigator initialRouteName="BottomTab">
+          <Stack.Screen name="BottomTab" component={BottomTab} options={{ headerShown: false }} />
+          <Stack.Screen name="Details" component={Details} options={{ headerShown: false }} />
+          <Stack.Screen name="MyAccount" component={MyAccount} options={{ headerShown: false }} />
+          <Stack.Screen name="History" component={History} options={{ headerShown: false }} />
+          <Stack.Screen name="NativeBaseScreen" component={NativeBaseScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="MapScreen" component={MapScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="CameraScreenView" component={CameraScreenView} options={{ headerShown: false }} />
+          <Stack.Screen name="FirebaseMessaging" component={FirebaseMessaging} options={{ headerShown: false }} />
+          <Stack.Screen name="AsyncStorageScreen" component={AsyncStorageScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="InboxScreen" component={InboxScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="DetailsDataInbox" component={DetailsDataInbox} options={{ headerShown: false }} />
+        </Stack.Navigator>
+
+      </Provider>
     </NavigationContainer>
   );
 }
