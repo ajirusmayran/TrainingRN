@@ -95,7 +95,8 @@ export default function InboxScreen({ navigation: { navigate } }) {
                         renderItem={({ item }) => (
                             <Pressable
                                 onPress={() => setSelected(item)}
-                                style={{ backgroundColor: '#d00000' }, id === selected?.id}>
+                                // style={{ backgroundColor: '#d00000' }, id === selected?.id}
+                            >
                                 <Box
                                     borderBottomWidth="1"
                                     _dark={{
